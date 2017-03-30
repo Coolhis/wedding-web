@@ -1,0 +1,507 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+// Font faces
+@font-face {
+	font-family: 'Koala';
+	src: url('font/Koala.eot');
+	src: url('font/Koala.eot?#iefix') format('embedded-opentype'),
+		url('font/Koala.woff') format('woff'),
+		url('font/Koala.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+// Global Components
+body {
+    overflow-x: hidden;
+    @include body-font;
+}
+
+.text-muted {
+    color: $gray-light;
+}
+
+.text-primary {
+    color: $theme-primary;
+}
+
+p {
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+p.large {
+    font-size: 16px;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a.active {
+    outline: none;
+}
+
+a {
+    color: $theme-primary;
+}
+
+a:hover,
+a:focus,
+a:active,
+a.active {
+    color: darken($theme-primary, 10%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @include heading-font;
+    font-weight: 700;
+}
+
+.img-centered {
+    margin: 0 auto;
+}
+
+.bg-lighten-primary {
+    background-color: $primary-lighten;
+}
+
+.bg-darkest-gray {
+    background-color: $gray-darker;
+}
+
+// Restyled Primary Buttons
+
+.btn-primary {
+    @include button-variant(white, $theme-primary, $theme-primary);
+    @include heading-font;
+    font-weight: 700;
+}
+
+.btn-xl {
+    @include button-variant(white, $theme-primary, $theme-primary);
+    @include heading-font;
+    font-weight: 700;
+    border-radius: 3px;
+    font-size: 18px;
+    padding: 20px 40px;
+}
+
+// Map container
+.map-container {
+	margin-top: 25px;
+	iframe{
+		width: 100%;
+		display: block;
+		pointer-events: none;
+		position: relative; /* IE needs a position other than static */
+	}
+	iframe.clicked{
+		pointer-events: auto;
+	}
+}
+
+
+// Custom Navigation Bar
+.navbar-custom {
+    border-color: transparent;
+    .navbar-brand {
+        color: $theme-danger;
+        display: none;
+        font-family: 'Koala';
+        font-weight: normal;
+        font-style: normal;
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+            color: $theme-danger;
+        }
+    }
+    .navbar-collapse {
+        border-color: fade-out(white, .02);
+    }
+    .navbar-toggle {
+        background-color: $theme-primary;
+        border-color: $theme-primary;
+        @include heading-font;
+        color: white;
+        font-size: 12px;
+        &:hover,
+        &:focus {
+            background-color: $theme-danger;
+        }
+    }
+    .nav {
+        li {
+            a {
+                @include heading-font;
+                font-weight: 400;
+                letter-spacing: 1px;
+                color: white;
+                &:hover,
+                &:focus {
+                    color: $theme-danger;
+                    outline: none;
+                }
+            }
+        }
+    }
+    .navbar-nav>.active>a {
+        border-radius: 0;
+        color: white;
+        background-color: $theme-primary;
+    }
+    .navbar-nav>.active>a:hover,
+    .navbar-nav>.active>a:focus {
+        color: white;
+        background-color: darken($theme-primary, 10%);
+    }
+}
+
+@media(min-width:768px) {
+    .navbar-custom {
+        background-color: transparent;
+        padding: 25px 0;
+        -webkit-transition: padding 0.3s;
+        -moz-transition: padding 0.3s;
+        transition: padding 0.3s;
+        border: none;
+        .navbar-brand {
+            font-size: 2em;
+            -webkit-transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            transition: all 0.3s;
+        }
+        .navbar-nav>.active>a {
+            border-radius: 3px;
+        }
+    }
+}
+
+// Navbar Change on Scroll
+@media(min-width:768px) {
+    .navbar-custom.affix {
+        background-color: $theme-primary;
+        padding: 10px 0;
+        .navbar-brand {
+            font-size: 2.5em;
+            color: white;
+            display: block;
+        }
+        .nav {
+            li {
+                a {
+
+                    &:hover,
+                    &:focus {
+                        color: white;
+                        background-color: darken($theme-primary, 10%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+header {
+    background-image: url('../img/header-bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    @include background-cover;
+    text-align: center;
+    color: white;
+    .intro-text {
+        padding-top: 100px;
+        padding-bottom: 50px;
+        .intro-lead-in {
+            font-family: 'Koala';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 40px;
+            line-height: 22px;
+            margin-bottom: 50px;
+            color: $theme-danger;
+        }
+        .intro-heading {
+            @include heading-font;
+            font-weight: 200;
+            font-size: 50px;
+            line-height: 50px;
+            margin-bottom: 25px;
+        }
+    }
+}
+
+@media(min-width:768px) {
+    header {
+        .intro-text {
+            padding-top: 350px;
+            padding-bottom: 200px;
+            .intro-lead-in {
+                font-family: 'Koala';
+                font-weight: normal;
+                font-style: normal;
+                font-style: italic;
+                font-size: 65px;
+                line-height: 40px;
+                margin-bottom: 50px;
+            }
+            .intro-heading {
+                @include heading-font;
+                font-weight: 100;
+                font-size: 75px;
+                line-height: 75px;
+                margin-bottom: 50px;
+            }
+        }
+    }
+}
+
+// Global Section Styles
+section {
+    padding: 50px 0;
+    h2.section-heading {
+        font-size: 40px;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+    h3.section-subheading {
+        font-size: 16px;
+        @include serif-font;
+        text-transform: none;
+        font-style: italic;
+        font-weight: 400;
+        margin-bottom: 75px;
+    }
+}
+
+// Gift
+.gift-image {
+	cursor: pointer;
+	display: inline-block;
+}
+
+.gift-text {
+	@include serif-font;
+	font-size: 25px;
+	font-style: italic;
+	display: none;
+	color: $gray-light;
+	margin-top: 50px;
+}
+
+#gift-subhead {
+	margin-bottom: 40px;
+}
+
+@media(min-width:768px) {
+	#gift-subhead {
+		margin-bottom: 75px;
+	}
+}
+
+// Timeline program
+.timeline-program {
+	padding: 0;
+    position: relative;
+	text-align: center;
+	&:before {
+		display: none;
+        top: 100px;
+        bottom: 0;
+        position: absolute;
+        content: "";
+        width: 100%;
+		height: 5px;
+        background-color: #f1f1f1;
+        left: 0px;
+		z-index: 100;
+        margin-left: -1.5px;
+    }
+	.timeline-program-item {
+		display: inline-block;
+		width: 200px;
+		margin-left: 25px;
+		margin-right: 25px;
+		margin-bottom: 50px;
+		position: relative;
+		z-index: 100;
+		background-color: white;
+		&:last-of-type {
+			margin-bottom: 0px;
+		};
+		.timeline-image {
+			margin: 0;
+			padding: 0;
+            color: white;
+            border-radius: 100%;
+        }
+		.timeline-program-text {
+			@include serif-font;
+			margin-top: 10px;
+			.time {
+				font-size: 20px;
+				font-style: italic;
+				font-weight: bold;
+			}
+			.descript {
+				font-size: 20px;
+				font-weight: lighter;
+			}
+		}
+	}
+}
+
+@media(min-width:1200px) {
+	.timeline-program {
+		&:before {
+			display: block;
+	    }
+	}
+
+	.timeline-program-item {
+		margin-bottom: 0px;
+	}
+}
+
+// About box
+.about-box {
+	display: inline-block;
+	text-align: center;
+	margin-top: 40px;
+	.about-box-image-primary {
+		display: inline-block;
+		margin: 0;
+		width: 300px;
+		height: 300px;
+		padding: 0;
+		color: white;
+		border-radius: 100%;
+		border: 7px solid $theme-primary;
+	}
+	.about-box-image-danger {
+		display: inline-block;
+		margin: 0;
+		width: 300px;
+		height: 300px;
+		padding: 0;
+		color: white;
+		border-radius: 100%;
+		border: 7px solid $theme-danger;
+	}
+	.about-box-text {
+		@include serif-font;
+		display: inline-block;
+		text-align: justify;
+		margin-top: 20px;
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+}
+
+@media(min-width:1200px) {
+	.about-box {
+		margin-bottom: 0px;
+	}
+}
+
+// Contact Section
+section#contact {
+    background-color: $gray-darker;
+    background-image: url('../img/map-image.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    .section-heading {
+        color: white;
+    }
+    .form-group {
+        margin-bottom: 25px;
+        input,
+        textarea {
+            padding: 20px;
+        }
+        input.form-control {
+            height: auto;
+        }
+        textarea.form-control {
+            height: 236px;
+        }
+    }
+    .form-control:focus {
+        border-color: $theme-primary;
+        box-shadow: none;
+    }
+    ::-webkit-input-placeholder {
+       @include heading-font;
+       font-weight: 700;
+       color: $gray-lighter;
+    }
+    :-moz-placeholder { /* Firefox 18- */
+       @include heading-font;
+       font-weight: 700;
+       color: $gray-lighter;
+    }
+    ::-moz-placeholder {  /* Firefox 19+ */
+       @include heading-font;
+       font-weight: 700;
+       color: $gray-lighter;
+    }
+    :-ms-input-placeholder {
+       @include heading-font;
+       font-weight: 700;
+       color: $gray-lighter;
+    }
+    .text-danger {
+        color: $theme-danger;
+    }
+}
+
+// Footer
+footer {
+    padding: 25px 0;
+    text-align: center;
+    span.copyright {
+        line-height: 40px;
+        @include heading-font;
+        text-transform: none;
+    }
+    ul.quicklinks {
+        margin-bottom: 0;
+        line-height: 40px;
+        @include heading-font;
+        text-transform: none;
+    }
+}
+
+.btn:focus,
+.btn:active,
+.btn.active,
+.btn:active:focus {
+    outline: none;
+}
+
+// Highlight Color Customization
+::-moz-selection {
+    text-shadow: none;
+    background: $theme-primary;
+}
+
+::selection {
+    text-shadow: none;
+    background: $theme-primary;
+}
+
+img::selection {
+    background: transparent;
+}
+
+img::-moz-selection {
+    background: transparent;
+}
+
+body {
+    webkit-tap-highlight-color: $theme-primary;
+}
