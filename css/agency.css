@@ -97,7 +97,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #68c9aa;
     background-color: white; }
 
-.btn-xl {
+.btn-xl-primary {
   color: white;
   background-color: #68c9aa;
   border-color: #68c9aa;
@@ -107,38 +107,87 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 3px;
   font-size: 18px;
   padding: 20px 40px; }
-  .btn-xl:focus, .btn-xl.focus {
+  .btn-xl-primary:focus, .btn-xl-primary.focus {
     color: white;
     background-color: #43bb95;
     border-color: #2f8368; }
-  .btn-xl:hover {
+  .btn-xl-primary:hover {
     color: white;
     background-color: #43bb95;
     border-color: #40b48f; }
-  .btn-xl:active, .btn-xl.active,
-  .open > .btn-xl.dropdown-toggle {
+  .btn-xl-primary:active, .btn-xl-primary.active,
+  .open > .btn-xl-primary.dropdown-toggle {
     color: white;
     background-color: #43bb95;
     border-color: #40b48f; }
-    .btn-xl:active:hover, .btn-xl:active:focus, .btn-xl:active.focus, .btn-xl.active:hover, .btn-xl.active:focus, .btn-xl.active.focus,
-    .open > .btn-xl.dropdown-toggle:hover,
-    .open > .btn-xl.dropdown-toggle:focus,
-    .open > .btn-xl.dropdown-toggle.focus {
+    .btn-xl-primary:active:hover, .btn-xl-primary:active:focus, .btn-xl-primary:active.focus, .btn-xl-primary.active:hover, .btn-xl-primary.active:focus, .btn-xl-primary.active.focus,
+    .open > .btn-xl-primary.dropdown-toggle:hover,
+    .open > .btn-xl-primary.dropdown-toggle:focus,
+    .open > .btn-xl-primary.dropdown-toggle.focus {
       color: white;
       background-color: #3aa180;
       border-color: #2f8368; }
-  .btn-xl:active, .btn-xl.active,
-  .open > .btn-xl.dropdown-toggle {
+  .btn-xl-primary:active, .btn-xl-primary.active,
+  .open > .btn-xl-primary.dropdown-toggle {
     background-image: none; }
-  .btn-xl.disabled:hover, .btn-xl.disabled:focus, .btn-xl.disabled.focus, .btn-xl[disabled]:hover, .btn-xl[disabled]:focus, .btn-xl[disabled].focus,
-  fieldset[disabled] .btn-xl:hover,
-  fieldset[disabled] .btn-xl:focus,
-  fieldset[disabled] .btn-xl.focus {
+  .btn-xl-primary.disabled:hover, .btn-xl-primary.disabled:focus, .btn-xl-primary.disabled.focus, .btn-xl-primary[disabled]:hover, .btn-xl-primary[disabled]:focus, .btn-xl-primary[disabled].focus,
+  fieldset[disabled] .btn-xl-primary:hover,
+  fieldset[disabled] .btn-xl-primary:focus,
+  fieldset[disabled] .btn-xl-primary.focus {
     background-color: #68c9aa;
     border-color: #68c9aa; }
-  .btn-xl .badge {
+  .btn-xl-primary .badge {
     color: #68c9aa;
     background-color: white; }
+
+.btn-xl-danger {
+  color: white;
+  background-color: #ffa19b;
+  border-color: #ffa19b;
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 3px;
+  font-size: 18px;
+  padding: 20px 40px; }
+  .btn-xl-danger:focus, .btn-xl-danger.focus {
+    color: white;
+    background-color: #ff7268;
+    border-color: #ff2a1b; }
+  .btn-xl-danger:hover {
+    color: white;
+    background-color: #ff7268;
+    border-color: #ff685d; }
+  .btn-xl-danger:active, .btn-xl-danger.active,
+  .open > .btn-xl-danger.dropdown-toggle {
+    color: white;
+    background-color: #ff7268;
+    border-color: #ff685d; }
+    .btn-xl-danger:active:hover, .btn-xl-danger:active:focus, .btn-xl-danger:active.focus, .btn-xl-danger.active:hover, .btn-xl-danger.active:focus, .btn-xl-danger.active.focus,
+    .open > .btn-xl-danger.dropdown-toggle:hover,
+    .open > .btn-xl-danger.dropdown-toggle:focus,
+    .open > .btn-xl-danger.dropdown-toggle.focus {
+      color: white;
+      background-color: #ff5044;
+      border-color: #ff2a1b; }
+  .btn-xl-danger:active, .btn-xl-danger.active,
+  .open > .btn-xl-danger.dropdown-toggle {
+    background-image: none; }
+  .btn-xl-danger.disabled:hover, .btn-xl-danger.disabled:focus, .btn-xl-danger.disabled.focus, .btn-xl-danger[disabled]:hover, .btn-xl-danger[disabled]:focus, .btn-xl-danger[disabled].focus,
+  fieldset[disabled] .btn-xl-danger:hover,
+  fieldset[disabled] .btn-xl-danger:focus,
+  fieldset[disabled] .btn-xl-danger.focus {
+    background-color: #ffa19b;
+    border-color: #ffa19b; }
+  .btn-xl-danger .badge {
+    color: #ffa19b;
+    background-color: white; }
+
+section#wherewhen p {
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-style: italic;
+  color: #777777; }
 
 .map-container {
   margin-top: 25px; }
@@ -385,11 +434,15 @@ section {
     margin-bottom: 0px; } }
 
 section#contact {
-  background-color: #222222;
-  background-image: url("../img/map-image.png");
+  background-color: #55c29f;
   background-position: center;
   background-repeat: no-repeat; }
+  section#contact #contactForm {
+    display: inline-block;
+    width: 600px; }
   section#contact .section-heading {
+    color: white; }
+  section#contact .section-subheading {
     color: white; }
   section#contact .form-group {
     margin-bottom: 25px; }
@@ -401,32 +454,39 @@ section#contact {
     section#contact .form-group textarea.form-control {
       height: 236px; }
   section#contact .form-control:focus {
-    border-color: #68c9aa;
+    border-color: #ffb9b4;
     box-shadow: none; }
   section#contact ::-webkit-input-placeholder {
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 700;
-    color: #eeeeee; }
+    color: #ffa19b; }
   section#contact :-moz-placeholder {
     /* Firefox 18- */
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 700;
-    color: #eeeeee; }
+    color: #ffb9b4; }
   section#contact ::-moz-placeholder {
     /* Firefox 19+ */
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 700;
-    color: #eeeeee; }
+    color: #ffb9b4; }
   section#contact :-ms-input-placeholder {
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     font-weight: 700;
-    color: #eeeeee; }
-  section#contact .text-danger {
     color: #ffb9b4; }
+  section#contact .text-danger {
+    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: uppercase;
+    color: white; }
+
+.help-block ul {
+  list-style: none; }
+  .help-block ul .alert {
+    margin-bottom: 0px; }
 
 footer {
   padding: 25px 0;

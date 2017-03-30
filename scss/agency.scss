@@ -79,13 +79,35 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
 
-.btn-xl {
+.btn-xl-primary {
     @include button-variant(white, $theme-primary, $theme-primary);
     @include heading-font;
     font-weight: 700;
     border-radius: 3px;
     font-size: 18px;
     padding: 20px 40px;
+}
+
+.btn-xl-danger {
+    @include button-variant(white, darken($theme-danger, 5%), darken($theme-danger, 5%));
+    @include heading-font;
+    font-weight: 700;
+    border-radius: 3px;
+    font-size: 18px;
+    padding: 20px 40px;
+}
+
+// Section wherewhen
+section#wherewhen {
+	h3{
+
+	}
+	p {
+		@include serif-font;
+		font-size: 20px;
+		font-style: italic;
+		color: $gray-light;
+	}
 }
 
 // Map container
@@ -410,13 +432,19 @@ section {
 
 // Contact Section
 section#contact {
-    background-color: $gray-darker;
-    background-image: url('../img/map-image.png');
+    background-color: darken($theme-primary, 5%);
     background-position: center;
     background-repeat: no-repeat;
+	#contactForm {
+		display: inline-block;
+		width: 600px;
+	}
     .section-heading {
         color: white;
     }
+	.section-subheading {
+		color: white;
+	}
     .form-group {
         margin-bottom: 25px;
         input,
@@ -431,32 +459,42 @@ section#contact {
         }
     }
     .form-control:focus {
-        border-color: $theme-primary;
+        border-color: $theme-danger;
         box-shadow: none;
     }
     ::-webkit-input-placeholder {
        @include heading-font;
        font-weight: 700;
-       color: $gray-lighter;
+       color: darken($theme-danger, 5%);
     }
     :-moz-placeholder { /* Firefox 18- */
        @include heading-font;
        font-weight: 700;
-       color: $gray-lighter;
+       color: $theme-danger;
     }
     ::-moz-placeholder {  /* Firefox 19+ */
        @include heading-font;
        font-weight: 700;
-       color: $gray-lighter;
+       color: $theme-danger;
     }
     :-ms-input-placeholder {
        @include heading-font;
        font-weight: 700;
-       color: $gray-lighter;
+       color: $theme-danger;
     }
     .text-danger {
-        color: $theme-danger;
+		 @include heading-font;
+        color: white;
     }
+}
+
+.help-block {
+	ul {
+		list-style: none;
+		.alert {
+			margin-bottom: 0px;
+		}
+	}
 }
 
 // Footer
