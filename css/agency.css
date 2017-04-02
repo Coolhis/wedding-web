@@ -185,7 +185,7 @@ h1, h2, h3, h4, h5, h6 {
 
 section#wherewhen p {
   font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   font-style: italic;
   color: #777777; }
 
@@ -411,7 +411,8 @@ section {
     padding: 0;
     color: white;
     border-radius: 100%;
-    border: 7px solid #68c9aa; }
+    border: 7px solid #68c9aa;
+    background-color: #68c9aa; }
   .about-box .about-box-image-danger {
     display: inline-block;
     margin: 0;
@@ -420,7 +421,8 @@ section {
     padding: 0;
     color: white;
     border-radius: 100%;
-    border: 7px solid #ffb9b4; }
+    border: 7px solid #ffb9b4;
+    background-color: #ffb9b4; }
   .about-box .about-box-text {
     font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
     display: inline-block;
@@ -438,8 +440,7 @@ section#contact {
   background-position: center;
   background-repeat: no-repeat; }
   section#contact #contactForm {
-    display: inline-block;
-    width: 600px; }
+    max-width: 600px; }
   section#contact .section-heading {
     color: white; }
   section#contact .section-subheading {
@@ -482,6 +483,11 @@ section#contact {
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     color: white; }
+
+@media (min-width: 768px) {
+  #contactForm {
+    display: inline-block;
+    width: 600px; } }
 
 .help-block ul {
   list-style: none; }

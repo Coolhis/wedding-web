@@ -104,7 +104,7 @@ section#wherewhen {
 	}
 	p {
 		@include serif-font;
-		font-size: 20px;
+		font-size: 18px;
 		font-style: italic;
 		color: $gray-light;
 	}
@@ -403,6 +403,7 @@ section {
 		color: white;
 		border-radius: 100%;
 		border: 7px solid $theme-primary;
+		background-color: $theme-primary;
 	}
 	.about-box-image-danger {
 		display: inline-block;
@@ -413,6 +414,7 @@ section {
 		color: white;
 		border-radius: 100%;
 		border: 7px solid $theme-danger;
+		background-color: $theme-danger;
 	}
 	.about-box-text {
 		@include serif-font;
@@ -432,12 +434,11 @@ section {
 
 // Contact Section
 section#contact {
-    background-color: darken($theme-primary, 5%);
-    background-position: center;
-    background-repeat: no-repeat;
+  background-color: darken($theme-primary, 5%);
+  background-position: center;
+  background-repeat: no-repeat;
 	#contactForm {
-		display: inline-block;
-		width: 600px;
+		max-width: 600px;
 	}
     .section-heading {
         color: white;
@@ -486,6 +487,13 @@ section#contact {
 		 @include heading-font;
         color: white;
     }
+}
+
+@media(min-width:768px) {
+	#contactForm {
+		display: inline-block;
+		width: 600px;
+	}
 }
 
 .help-block {
