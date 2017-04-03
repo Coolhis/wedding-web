@@ -551,3 +551,66 @@ img::-moz-selection {
 body {
     webkit-tap-highlight-color: $theme-primary;
 }
+
+#success {
+	 @include serif-font;
+	 font-weight: normal;
+}
+
+// Calendar button
+.atc-style-blue .atcb-link,
+.atc-style-blue .atcb-link:hover,
+.atc-style-blue .atcb-link:active,
+.atc-style-blue .atcb-link:focus{
+	@include button-variant(white, $theme-primary, $theme-primary);
+	@include heading-font;
+	font-weight: 100;
+	margin-top: 20px;
+}
+
+.atc-style-blue .atcb-list {
+    width: 170px;
+    border: 1px solid rgb(186,186,186);
+    border-radius: 2px;
+    box-shadow: 0 0 5px #AAA;
+}
+
+.atc-style-blue .atcb-list,
+.atc-style-blue .atcb-item
+{
+    background: #fff;
+    color: #000;
+}
+
+.atc-style-blue .atcb-item,
+.atc-style-blue .atcb-item-link
+{
+    line-height: 1.3em;
+    vertical-align: middle;
+    zoom: 1;
+}
+
+.atc-style-blue .atcb-item-link,
+.atc-style-blue .atcb-item-link:hover,
+.atc-style-blue .atcb-item-link:active,
+.atc-style-blue .atcb-item-link:focus
+{
+    color: #000;
+    font-family: "Verdana";
+    font-size: 14px;
+    text-decoration: none;
+    outline: none;
+    padding: 5px 15px;
+}
+
+.atc-style-blue .atcb-item-link:hover,
+.atc-style-blue .atcb-item-link:active,
+.atc-style-blue .atcb-item-link:focus
+{
+    color: #fff;
+}
+
+.atc-style-blue .atcb-item.hover,
+.atc-style-blue .atcb-item:hover {
+   background: $theme-primary;
+}
