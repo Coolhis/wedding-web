@@ -128,6 +128,7 @@ section#wherewhen {
 // Custom Navigation Bar
 .navbar-custom {
     border-color: transparent;
+	background-color: transparent;
     .navbar-brand {
         color: $theme-danger;
         display: none;
@@ -152,10 +153,11 @@ section#wherewhen {
         font-size: 12px;
         &:hover,
         &:focus {
-            background-color: $theme-danger;
+            background-color: $theme-primary;
         }
     }
     .nav {
+		background-color: transparent;
         li {
             a {
                 @include heading-font;
@@ -183,6 +185,27 @@ section#wherewhen {
 }
 
 @media(min-width:768px) {
+	.navbar-header {
+		display: none;
+	}
+}
+
+@media(min-width:1024px) {
+	.navbar-header {
+		display: block;
+	}
+}
+
+
+.navbar-custom.affix {
+	.navbar-brand {
+		font-size: 2.5em;
+		color: white;
+		display: block;
+	}
+}
+
+@media(min-width:768px) {
     .navbar-custom {
         background-color: transparent;
         padding: 25px 0;
@@ -196,6 +219,13 @@ section#wherewhen {
             -moz-transition: all 0.3s;
             transition: all 0.3s;
         }
+		.nav {
+	        li {
+	            a {
+	                letter-spacing: 0px;
+	            }
+	        }
+	    }
         .navbar-nav>.active>a {
             border-radius: 3px;
         }
@@ -210,20 +240,17 @@ section#wherewhen {
         .navbar-brand {
             font-size: 2.5em;
             color: white;
-            display: block;
         }
-        .nav {
-            li {
-                a {
+    }
+}
 
-                    &:hover,
-                    &:focus {
-                        color: white;
-                        background-color: darken($theme-primary, 10%);
-                    }
-                }
-            }
-        }
+@media(max-width:414px) {
+    .navbar-custom {
+		display: none;
+        background-color: $theme-primary;
+    }
+	.navbar-custom.affix {
+        display: block;
     }
 }
 
@@ -423,12 +450,27 @@ section {
 		margin-top: 20px;
 		padding-left: 50px;
 		padding-right: 50px;
+		line-height: 25px;
 	}
 }
 
 @media(min-width:1200px) {
 	.about-box {
 		margin-bottom: 0px;
+	}
+}
+
+@media(min-width:328px) {
+	.about-box {
+		.about-box-text {
+			@include serif-font;
+			display: inline-block;
+			text-align: justify;
+			margin-top: 20px;
+			padding-left: 0px;
+			padding-right: 0px;
+			line-height: 20px;
+		}
 	}
 }
 

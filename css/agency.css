@@ -201,7 +201,8 @@ section#wherewhen p {
     pointer-events: auto; }
 
 .navbar-custom {
-  border-color: transparent; }
+  border-color: transparent;
+  background-color: transparent; }
   .navbar-custom .navbar-brand {
     color: #ffb9b4;
     display: none;
@@ -220,16 +221,18 @@ section#wherewhen p {
     color: white;
     font-size: 12px; }
     .navbar-custom .navbar-toggle:hover, .navbar-custom .navbar-toggle:focus {
-      background-color: #ffb9b4; }
-  .navbar-custom .nav li a {
-    font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    text-transform: uppercase;
-    font-weight: 400;
-    letter-spacing: 1px;
-    color: white; }
-    .navbar-custom .nav li a:hover, .navbar-custom .nav li a:focus {
-      color: #ffb9b4;
-      outline: none; }
+      background-color: #68c9aa; }
+  .navbar-custom .nav {
+    background-color: transparent; }
+    .navbar-custom .nav li a {
+      font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      text-transform: uppercase;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: white; }
+      .navbar-custom .nav li a:hover, .navbar-custom .nav li a:focus {
+        color: #ffb9b4;
+        outline: none; }
   .navbar-custom .navbar-nav > .active > a {
     border-radius: 0;
     color: white;
@@ -238,6 +241,19 @@ section#wherewhen p {
   .navbar-custom .navbar-nav > .active > a:focus {
     color: white;
     background-color: #43bb95; }
+
+@media (min-width: 768px) {
+  .navbar-header {
+    display: none; } }
+
+@media (min-width: 1024px) {
+  .navbar-header {
+    display: block; } }
+
+.navbar-custom.affix .navbar-brand {
+  font-size: 2.5em;
+  color: white;
+  display: block; }
 
 @media (min-width: 768px) {
   .navbar-custom {
@@ -252,6 +268,8 @@ section#wherewhen p {
       -webkit-transition: all 0.3s;
       -moz-transition: all 0.3s;
       transition: all 0.3s; }
+    .navbar-custom .nav li a {
+      letter-spacing: 0px; }
     .navbar-custom .navbar-nav > .active > a {
       border-radius: 3px; } }
 
@@ -261,11 +279,14 @@ section#wherewhen p {
     padding: 10px 0; }
     .navbar-custom.affix .navbar-brand {
       font-size: 2.5em;
-      color: white;
-      display: block; }
-    .navbar-custom.affix .nav li a:hover, .navbar-custom.affix .nav li a:focus {
-      color: white;
-      background-color: #43bb95; } }
+      color: white; } }
+
+@media (max-width: 414px) {
+  .navbar-custom {
+    display: none;
+    background-color: #68c9aa; }
+  .navbar-custom.affix {
+    display: block; } }
 
 header {
   background-image: url("../img/header-bg.jpg");
@@ -429,11 +450,22 @@ section {
     text-align: justify;
     margin-top: 20px;
     padding-left: 50px;
-    padding-right: 50px; }
+    padding-right: 50px;
+    line-height: 25px; }
 
 @media (min-width: 1200px) {
   .about-box {
     margin-bottom: 0px; } }
+
+@media (min-width: 328px) {
+  .about-box .about-box-text {
+    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    display: inline-block;
+    text-align: justify;
+    margin-top: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+    line-height: 20px; } }
 
 section#contact {
   background-color: #55c29f;

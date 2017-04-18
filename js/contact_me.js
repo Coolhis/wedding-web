@@ -11,8 +11,6 @@ $(function() {
             event.preventDefault(); // prevent default submit behaviour
             // get values from FORM
             var name = $("input#name").val();
-            var email = $("input#email").val();
-            var message = $("textarea#message").val();
             var firstName = name; // For Success/Failure Message
             // Check for white space in name for Success/Fail message
             if (firstName.indexOf(' ') >= 0) {
@@ -22,9 +20,7 @@ $(function() {
                 url: "././mail/contact_me.php",
                 type: "POST",
                 data: {
-                    name: name,
-                    email: email,
-                    message: message
+                    name: name
                 },
                 cache: false,
                 success: function() {
@@ -33,7 +29,7 @@ $(function() {
                     $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
                     $('#success > .alert-success')
-                        .append("<strong>Děkujeme, Vaše zpráva byla odeslána!. </strong>");
+                        .append("<strong>Skvělé, těšíme se na Vás!</strong>");
                     $('#success > .alert-success')
                         .append('</div>');
 
@@ -45,7 +41,7 @@ $(function() {
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
-                    $('#success > .alert-danger').append($("<strong>").text("Litujeme, ale zprávu se nepodařilo odeslat. Zkuste to prosím později!"));
+                    $('#success > .alert-danger').append($("<strong>").text("Litujeme, ale potvrzení se nepodařilo odeslat. Zkuste to prosím později!"));
                     $('#success > .alert-danger').append('</div>');
                     //clear all fields
                     $('#contactForm').trigger("reset");
